@@ -69,7 +69,7 @@ const InfoAndRelationships: NextPage = () => {
             isInvalid
           />
           <div className="showWhenError" aria-live="assertive" id="emailError">
-            <span>Epost er påkrevd</span>{" "}
+            <span>Epost er påkrevd</span>
             <WarningTwoIcon color="red.500" aria-hidden="true" />
           </div>
         </FormControl>

@@ -1,21 +1,20 @@
-import type { NextPage } from "next";
-import Layout from "../../../components/layout";
 import { ExternalLinkIcon, WarningIcon } from "@chakra-ui/icons";
 import {
   FormControl,
   FormLabel,
-  Input,
-  Text,
-  Link,
   Heading,
+  Input,
+  Link,
+  Text,
 } from "@chakra-ui/react";
-import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
 import "highlight.js/styles/dracula.css";
-import dracula from "../../../theme/dracula";
+import type { NextPage } from "next";
+import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
 import images from "../../../codeExamples/images.js";
 import svg from "../../../codeExamples/svg.js";
-
 import AccordionBox from "../../../components/accordion";
+import Layout from "../../../components/layout";
+import dracula from "../../../theme/dracula";
 
 const Resources = () => {
   return (

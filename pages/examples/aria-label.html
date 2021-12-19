@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="no">
+  <head>
+    <meta charset="UTF-8" />
+  </head>
+  <h1>Aria-label</h1>
+  <div aria-label="navngitt område">
+    <p>
+      Dette er i ett navngitt område, fokus går først til div-elementet og
+      annonserer hva aria-label attributtet sier. Neste i rekkefølgen er denne
+      teksten
+    </p>
+  </div>
+
+  <div>
+    <p>
+      Dette er ikke i ett navngitt område, fokus går direkte til teksten i dette
+      p-elementet
+    </p>
+  </div>
+
+  <h1 id="overskrift">Kaker</h1>
+  <!-- 
+      Ostekake overskrives helt av sjokoladekake
+  -->
+  <button aria-label="sjokoladekake">Ostekake</button>
+  <!--
+      Gultorkake overskrives helt av overskrifen kaker
+  -->
+  <button aria-labelledby="overskrift">Gulrotkake</button>
+  <!--
+    Ekesmpel på korrekt bruk av aria-labelledby og aria-label
+-->
+  <h2 id="cakeSearch">Søk</h2>
+  <form role="search">
+    <label for="search"
+      >Søk etter kaker
+      <input type="search" id="search" />
+    </label>
+    <button aria-labelledby="cakeSearch" />
+  </form>
+
+  <article aria-labelledby="articleHeading">
+    <h2 id="articleHeading">Bloggpost om kaker</h2>
+    <p>Kaker smaker godt</p>
+    <button>Mer info om kaker</button>
+  </article>
+</html>
+
+<div role="application" aria-labelledby="calendar" aria-describedby="info">
+  <h1 id="calendar">Calendar</h1>
+  <p id="info">This calendar shows the game schedule for the Boston Red Sox.</p>
+  <div role="grid">...</div>
+</div>
+
+<label for="fName">Fornavn</label>
+<input type="text" id="fName" aria-describedby="errorText" />
+<!-- 
+Feilmeldingen blir annonsert med en gang den oppstår i DOM
+-->
+<div aria-live="assertive">
+  <span class="errorText" id="fNameError">Navn er påkrevd</span>
+</div>
+<article aria-label="articleHeading">
+  <h2 id="articleHeading">Bloggpost om kaker</h2>
+  <p>Kaker smaker godt</p>
+  <button>Mer info om kaker</button>
+</article>
+
+<form role="search">
+  <label for="searchField">Søk</label>
+  <input id="searchField" type="search" />
+</form>
+<!--
+    Aria-live polite gir informasjon om antall søketreff
+    uten å forstyrre brukeren mens de skriver.
+    Polite venter til brukeren tar en pause i skrivingen.
+-->
+<div aria-live="polite">
+  <span>5 søketreff</span>
+</div>
+
+
+<!--
+    Annonserer både "Siste nyheter" og 
+-->
+<div aria-live="polite" aria-atomic="true">
+    <h3>Siste nyheter</h3>
+    <span>Kaker nå dyrere enn kjeks</span>
+</div>
+
+<!--
+    Annonserer både "Siste nyheter" og den siste nyheten blir annonsert
+-->
+<div aria-live="polite" aria-atomic="true">
+    <h2>Siste nyheter</h2>
+    <h3>Kaker nå dyrere enn kjeks</h3>
+</div>
+
+<!--
+    Annonserer både "Siste nyheter" og den siste nyheten blir annonsert
+-->
+<div aria-live="polite" aria-atomic="true">
+    <h2>Siste nyheter</h2>
+    <h3>Kaker nå dyrere enn kjeks</h3>
+</div>
+
+<!--
+    Kun overskriften med id latestHeadline annonseres med aria-live
+    Fordi det er den eneste overskriften som endrer seg
+-->
+<div aria-live="polite" aria-atomic="false">
+  
+    <h2 id="newsHeadline">Siste nyheter</h2>
+      <!--
+        Klokke med sekunder
+    -->
+    <Clock>
+        <!--
+            aria-describedby annonserer at innholdet er siste nyheter
+            etter "Kaker nå dyrere.." annonseres
+        -->
+    <h3 aria-describedby="newsHeadline" id="latestHeadline">Kaker nå dyrere enn kjeks</h3>
+</div>
+
+<h2 role="alert">Jeg er inni role alert</h2>
+<h2 aria-live="assertive">Jeg er inni aria-live</h2>
+
+<!--
+  Knapp kodet som lenke med role="button" fra regjeringen.no
+-->
+<a role="button" href="javascript:printPage()">Skriv ut</a>
+
+<!--
+  En mer robust løsning
+-->
+<button id="printButton">Skriv ut</button>
