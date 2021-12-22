@@ -3,7 +3,7 @@ import Head from "next/head";
 
 type Props = {
   title: string;
-  children: JSX.Element | JSX.Element[];
+  children: React.ReactNode;
 };
 
 // const Layout: React.FC<Props> = ({ children, title }) => {
@@ -28,7 +28,7 @@ const Layout = ({ children, title }: Props) => {
       </Head>
       <Container>
         <main>{children}</main>
-        <footer>Her er en footer</footer>
+        {/* <footer>Her er en footer</footer> */}
       </Container>
     </>
   );
