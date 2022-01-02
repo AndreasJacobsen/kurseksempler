@@ -52,12 +52,13 @@ const theme = extendTheme({
     80: "20rem",
     96: "24rem",
   },
-  fonts: {
-    body: "system-ui, sans-serif",
-    heading: "Graphik, Helvetica, Arial, San-serif",
-    mono: "Menlo, monospace",
-  },
+  // fonts: {
+  //   body: "system-ui, sans-serif",
+  //   heading: "Graphik, Helvetica, Arial, San-serif",
+  //   mono: "Menlo, monospace",
+  // },
   components,
 });
 
-export default extendTheme(theme);
+// export default extendTheme(theme);
+export default theme;

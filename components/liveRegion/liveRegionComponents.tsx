@@ -1,17 +1,14 @@
 import { Box, Button, chakra, Heading } from "@chakra-ui/react";
 import React, { useState } from "react";
 import { FaShoppingBasket } from "react-icons/fa";
-import Layout from "../../components/layout";
-type Props = {
-  liveMessage: boolean;
-};
+
 type LiveRegionProps = {
   liveMessage: boolean;
   atomic?: boolean;
   children: React.ReactNode;
 };
 
-const LiveRegion = ({
+export const LiveRegion = ({
   liveMessage,
   atomic = true,
   children,
@@ -22,7 +19,9 @@ const LiveRegion = ({
     </div>
   );
 };
-const LiveForm = ({ liveMessage }: Props) => {
+
+export const LiveForm = () => {
+  const [formError, setFormError] = useState(false);
   return (
     <Box marginTop="1em" border="solid black 2px" padding="0.5em">
       <Heading as="h2" fontSize="1.2em">
@@ -38,8 +37,8 @@ const LiveForm = ({ liveMessage }: Props) => {
           aria-live="assertive"
           id="emailError"
         >
-          <LiveRegion liveMessage={liveMessage}>
-            <span className="error">Epostadresse er påkrevd</span>
+          <LiveRegion liveMessage={formError}>
+            <span className="error">E-postadresse er påkrevd</span>
           </LiveRegion>
         </chakra.div>
         <chakra.input
@@ -48,16 +47,21 @@ const LiveForm = ({ liveMessage }: Props) => {
           id="email"
           required
           aria-describedby="emailError"
-          aria-invalid={liveMessage}
+          aria-invalid={formError}
           boxShadow="0 0 0 5px #000"
           _focus={{ boxShadow: "0 0 0 10px #FE5F55", border: "none" }}
         />
       </form>
+      <Button onClick={() => setFormError(!formError)} marginTop="1em">
+        {formError ? "Skjul skjemafeil" : "Vis skjemafeil"}
+      </Button>
     </Box>
   );
 };
 
-const ShoppingCart = ({ liveMessage }: Props) => {
+export const ShoppingCart = () => {
+  const [shoppingError, setShoppingError] = useState(false);
+
   //   Med aria-atomic annonseres hele området hver gang noe i det oppdateres
   //   Så både overskriven og innholdet i span annonseres
   return (
@@ -71,16 +75,21 @@ const ShoppingCart = ({ liveMessage }: Props) => {
       <Heading as="h2" fontSize="1.2em">
         Handlekurv med siste vare lagt til
       </Heading>
-      <LiveRegion liveMessage={liveMessage}>
+      <LiveRegion liveMessage={shoppingError}>
         <FaShoppingBasket aria-hidden="true" fontSize="2em" />
         <h2>Siste vare i handlekurven </h2>
         <span>Blå jeans</span>
       </LiveRegion>
+      <Button onClick={() => setShoppingError(!shoppingError)}>
+        {shoppingError ? "Skjul handlekurv" : "Vis handlekurl"}
+      </Button>
     </Box>
   );
 };
 
-const MatchScore = ({ liveMessage }: Props) => {
+export const MatchScore = () => {
+  const [matchScore, setMatchScore] = useState(false);
+
   return (
     <Box marginTop="1em" border="solid black 2px" padding="0.5em">
       {/* 
@@ -90,28 +99,16 @@ const MatchScore = ({ liveMessage }: Props) => {
       <Heading as="h2" fontSize="1.2em">
         Live fotballscoreviser
       </Heading>
-      <LiveRegion liveMessage={liveMessage} atomic={false}>
+      <LiveRegion liveMessage={matchScore} atomic={false}>
         <h2>Siste målskåringer</h2>
         <span>
           Leverbasseng vs Tommelskinke{" "}
           <chakra.span fontWeight="bold">1 - 0</chakra.span>
         </span>
       </LiveRegion>
+      <Button onClick={() => setMatchScore(!matchScore)}>
+        {matchScore ? "Skjul fotballscore" : "Vis fotballscore"}
+      </Button>
     </Box>
   );
 };
-
-const LiveRegions = () => {
-  const [liveMessage, setLiveMessage] = useState(false);
-  return (
-    <Layout title="live regioner">
-      <Button onClick={() => setLiveMessage(!liveMessage)} margin="1em">
-        {liveMessage ? "Deaktiver live-regioner" : "Aktiver alle live regioner"}
-      </Button>
-      <LiveForm liveMessage={liveMessage} />
-      <ShoppingCart liveMessage={liveMessage} />
-      <MatchScore liveMessage={liveMessage} />
-    </Layout>
-  );
-};
-export default LiveRegions;

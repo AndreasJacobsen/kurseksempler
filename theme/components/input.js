@@ -16,19 +16,6 @@ const Input = {
         },
       },
     },
-    outline2: {
-      _invalid: {
-        borderColor: "redBrandColor",
-      },
-      bg: "brandGreen",
-      _focus: {
-        boxShadow: "0 0 0 5px #FE5F55",
-        border: "none",
-      },
-      _hover: {
-        borderColor: "redBrandColor",
-      },
-    },
   },
 };
 

@@ -29,15 +29,6 @@ const Link = {
       },
     },
   },
-
-  // Vi kan globalt sette farger, men ved å sette dem til feks svart mister vi contrast på lenker der
-  // Vi bør finne en global hover og focus farge, så sette custom på de som bryter kontrast
-  // _hover: {
-  //   color: "brandBrown",
-  // },
-  // _focus: {
-  //   color: "brandBrown",
-  // },
 };
 
 export default Link;
