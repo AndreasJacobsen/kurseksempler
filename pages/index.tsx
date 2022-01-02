@@ -17,7 +17,7 @@ const Home: NextPage = () => {
         </Box>
         <Box>
           <p>
-            <b>Knapp kodet som div med role="button"</b>
+            <b>Knapp kodet som div med role=button</b>
           </p>
           <Button colorScheme="green" as="div" role="button">
             Div
