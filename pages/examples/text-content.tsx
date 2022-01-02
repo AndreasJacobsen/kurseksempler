@@ -24,8 +24,8 @@ const TextContent = () => {
       <Text>
         Når vi lager nye paragrafer er det viktig å lage ny p-elmenter
         istedenfor å benytte elementer som br.
-        <br /> Br lager visuelt en ny paragrafer men for hjelpemidler som
-        skjermlesere oppfattes ikke det som en ny paragraf
+        <br /> Br lager visuelt en ny paragrafer, men skjermlesere kan ofte
+        tolke innholdet som del av samme sethning.
       </Text>
       <Heading as="h2" fontSize="1.2em" marginTop="0.2em">
         Implisiv tekst
