@@ -14,7 +14,7 @@ import images from "../../../codeExamples/images.js";
 import svg from "../../../codeExamples/svg.js";
 import AccordionBox from "../../../components/accordion";
 import Layout from "../../../components/layout";
-import dracula from "../../../theme/dracula";
+import dracula from "../../../components/theme/dracula";
 
 const Resources = () => {
   return (

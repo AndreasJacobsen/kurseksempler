@@ -22,8 +22,10 @@ const LinkRole = () => {
           Lenke som a-tag
         </Heading>
         <Text>Fungerer som en vanlig lenke.</Text>
-        <Text>Kan tab, pil og hurtignavigeres til</Text>
-        <Link href="/" textDecoration="underline">
+        <Text>
+          Kan tab, pil og hurtignavigeres til og er synlig i lenkelisten
+        </Text>
+        <Link href="/eksempler/lenkeRolle" textDecoration="underline">
           Til startsiden
         </Link>
       </LinkContainer>
@@ -31,7 +33,11 @@ const LinkRole = () => {
         <Heading as="h2" fontSize="1.2em">
           Lenke som knapp
         </Heading>
-        <Text></Text>
+        <Text>
+          Kan tabnvavigeres til, men gir ikke programmatisk informasjon om at
+          elementet er en lenke
+        </Text>
+        <Text>Er ikke synlig i lenkelisten</Text>
         <Button variant="solid" colorScheme="teal">
           Til startsiden
         </Button>
@@ -40,8 +46,14 @@ const LinkRole = () => {
         <Heading as="h2" fontSize="1.2em">
           Lenke som div med role
         </Heading>
-        <Text>Lenke </Text>
-        <Link as="div" role="link" href="/" textDecoration="underline">
+        <Text>Ikke mulig å tabnavigere til</Text>
+        <Text>Er synlig i lenkelisten, men fortsatt en dårlig løsnings</Text>
+        <Link
+          as="div"
+          role="link"
+          href="/eksempler/lenkeRolle"
+          textDecoration="underline"
+        >
           Til startsiden
         </Link>
       </LinkContainer>
