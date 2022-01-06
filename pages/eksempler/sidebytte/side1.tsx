@@ -103,6 +103,12 @@ const Page1 = () => {
       <Heading as="h1" marginBottom="1em">
         Elementer med utvidet info for skjermlesere
       </Heading>
+      <Text>Naviger til neste side med skjermleser, se hvor fokus lander.</Text>
+      <Text>
+        Se hvor skjermleserens fokus lander, bruk altså piltastene istedenfor
+        tab-tasten for å navigere.
+      </Text>
+
       <AccordionElements />
       <ChakraLink textDecoration="underline">
         <Link href="./side2">Til neste side</Link>

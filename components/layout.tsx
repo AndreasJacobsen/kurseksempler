@@ -26,7 +26,7 @@ const Layout = ({ children, title }: Props) => {
       <Head>
         <title>{title}</title>
       </Head>
-      <Container>
+      <Container marginTop="1em">
         <main>{children}</main>
         {/* <footer>Her er en footer</footer> */}
       </Container>
