@@ -5,8 +5,8 @@ import "../styles/globals.css";
 
 function MyApp({ Component, pageProps }: AppProps) {
   return (
-    <ChakraProvider>
-      <Component {...pageProps} theme={theme} />
+    <ChakraProvider theme={theme}>
+      <Component {...pageProps} />
     </ChakraProvider>
   );
 }

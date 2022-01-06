@@ -1,5 +1,7 @@
 import { Box, Heading, Text } from "@chakra-ui/react";
+import Link from "next/link";
 import Layout from "../../components/layout";
+import { InternalLink } from "../../components/links";
 
 const TextContent = () => {
   return (
@@ -17,6 +19,15 @@ const TextContent = () => {
       <Text>
         Paragrafer kan ha andre tags i seg, som span for{" "}
         <span lang="en">English text content</span> og bilder
+      </Text>
+      <Heading as="h2" fontSize="1.2em" marginTop="0.2em">
+        Med lenker
+      </Heading>
+      <Text>
+        Lenker er tekstinnhold som kan navigeres til som egne elementer. For
+        eksempel en{" "}
+        <InternalLink href="./tekstinnhold">lenke til denne siden</InternalLink>
+        .
       </Text>
       <Heading as="h2" fontSize="1.2em" marginTop="0.2em">
         Med br-tagg
