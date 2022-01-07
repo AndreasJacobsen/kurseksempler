@@ -94,6 +94,10 @@ const AccordionElements = () => {
           aliquip ex ea commodo consequat.
         </AccordionPanel>
       </AccordionItem>
+
+      <button>
+        <img src="/static/skrivUt.png" />
+      </button>
     </Accordion>
   );
 };

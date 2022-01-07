@@ -11,7 +11,7 @@ import {
 } from "@chakra-ui/react";
 
 const FocusElements = () => {
-  const formMessage = useRef<HTMLParagraphElemet>(null);
+  const formMessage = useRef(null);
   const [keyboardFocus, setKeyboardFocus] = useState(false);
   const [activationFocus, setActivationFocus] = useState(false);
   const [hover, setHover] = useState(false);

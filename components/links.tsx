@@ -2,7 +2,6 @@ import { Link as ChakraLink, VisuallyHidden } from "@chakra-ui/react";
 import { ExternalLinkIcon } from "@chakra-ui/icons";
 
 import Link from "next/link";
-import language from "react-syntax-highlighter/dist/esm/languages/hljs/accesslog";
 
 type LinkProps = {
   href: string;

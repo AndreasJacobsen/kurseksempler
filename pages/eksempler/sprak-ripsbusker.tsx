@@ -2,13 +2,6 @@ import { Text, Box, Heading } from "@chakra-ui/react";
 import { ExternalLink } from "../../components/links";
 import React from "react";
 import Layout from "../../components/layout";
-import {
-  FormControl,
-  FormLabel,
-  FormErrorMessage,
-  FormHelperText,
-  Input,
-} from "@chakra-ui/react";
 
 type ContainerProps = {
   children: React.ReactNode;
@@ -78,21 +71,6 @@ const Languages = () => {
     );
   };
 
-  const FormFocus = () => {
-    return (
-      <Textbox>
-        <form>
-          <FormControl>
-            <FormLabel htmlFor="email">Email address</FormLabel>
-            <FormHelperText>We'll never share your email.</FormHelperText>
-
-            <Input id="email" type="email" />
-          </FormControl>
-        </form>
-      </Textbox>
-    );
-  };
-
   return (
     <Layout title="Lang-tag">
       <Heading>Lang-tag</Heading>
@@ -103,7 +81,6 @@ const Languages = () => {
       <English />
       <EnglishNorwegian />
       <PartsOfPage />
-      <FormFocus />
     </Layout>
   );
 };
