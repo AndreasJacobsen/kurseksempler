@@ -3,10 +3,12 @@ import Layout from "../../components/layout";
 
 const FocusExamplePage = () => {
   // Hook med tom referanse, populeres med referanse til første overskrift ved sidelast
-  const pageRef = useRef(null);
+  const headerRef = useRef(null);
   // Setter fokus en gang når siden laster
   useEffect(() => {
-    pageRef.current.focus();
+    if (headerRef?.current.focus) {
+      headerRef.current.focus();
+    }
   }, []);
 
   return (
@@ -17,7 +19,7 @@ const FocusExamplePage = () => {
 
          ref populerer useRef-verdien med en referanse til overskriften så fokus kan settes dit. 
         */}
-      <h1 as="h1" ref={pageRef} tabIndex="-1">
+      <h1 ref={headerRef} tabIndex="-1">
         Programmatisk fokushåndtering
       </h1>
       <p>Sett fokus til første h1 eller main-elementet.</p>

@@ -2,6 +2,13 @@ import { Text, Box, Heading } from "@chakra-ui/react";
 import { ExternalLink } from "../../components/links";
 import React from "react";
 import Layout from "../../components/layout";
+import {
+  FormControl,
+  FormLabel,
+  FormErrorMessage,
+  FormHelperText,
+  Input,
+} from "@chakra-ui/react";
 
 type ContainerProps = {
   children: React.ReactNode;
@@ -58,12 +65,30 @@ const Languages = () => {
         </Heading>
         <Text>
           W3C har mer informasjon om hvordan språk på deler av siden funger,
-          <ExternalLink href="https://www.w3.org/WAI/WCAG21/Understanding/language-of-parts.html">
+          <ExternalLink
+            lang="en"
+            href="https://www.w3.org/WAI/WCAG21/Understanding/language-of-parts.html"
+          >
             {" "}
             Understanding Success Criterion 3.1.2: Language of Parts
           </ExternalLink>
           .
         </Text>
+      </Textbox>
+    );
+  };
+
+  const FormFocus = () => {
+    return (
+      <Textbox>
+        <form>
+          <FormControl>
+            <FormLabel htmlFor="email">Email address</FormLabel>
+            <FormHelperText>We'll never share your email.</FormHelperText>
+
+            <Input id="email" type="email" />
+          </FormControl>
+        </form>
       </Textbox>
     );
   };
@@ -76,8 +101,9 @@ const Languages = () => {
       </Text>
       <Norwegian />
       <English />
-      <PartsOfPage />
       <EnglishNorwegian />
+      <PartsOfPage />
+      <FormFocus />
     </Layout>
   );
 };
