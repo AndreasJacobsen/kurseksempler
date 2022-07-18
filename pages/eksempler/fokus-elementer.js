@@ -81,8 +81,7 @@ const FocusElements = () => {
       </Heading>
       <Text>
         Vanligvis anbefaler vi aldri å kjøre noe funksjonalitet bare når en ett
-        element får fokus. Her gjør vi det for å vise hvor irriterende det kan
-        være 😊. Fokuser på knappen med mus og tastatur
+        element får fokus. Her gjør vi det for å vise hvor irriterende det kan*
       </Text>
 
       <FocusButton />
